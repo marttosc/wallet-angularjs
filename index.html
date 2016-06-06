@@ -49,7 +49,7 @@
                             <p class="lead">{{ card.number }}</p>
                             <p class="text-{{ card.active ? 'success' : 'warning' }}">{{ card.active ? 'Active' : 'Disabled' }}</p>
                             <hr>
-                            <a href="#!/" ng-click="changeStatus(card.number)">Disable card</a>
+                            <button class="btn btn-link btn-sm" ng-click="changeStatus(card.number)">Disable card</button>
                         </div>
                     </div>
                 </div>
@@ -64,7 +64,7 @@
                             <p class="lead">{{ card.number }}</p>
                             <p class="text-{{ card.active ? 'success' : 'warning' }}">{{ card.active ? 'Active' : 'Disabled' }}</p>
                             <hr>
-                            <a href="#!/" ng-click="changeStatus(card.number)">Active card</a>
+                            <button class="btn btn-link btn-sm" ng-click="changeStatus(card.number)">Disable card</button>
                         </div>
                     </div>
                 </div>
