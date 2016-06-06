@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Wallet AngularJS</title>
+
+        <link rel="stylesheet" type="text/css" href="stylesheets/css/stylesheet.css">
+
+        <script src="node_modules/angular/angular.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="javascripts/wallet.js" type="text/javascript" charset="utf-8"></script>
+    </head>
+    <body ng-app="wallet">
+        <div class="container" ng-controller="WalletCtrl">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3 class="page-header"><i class="glyphicon glyphicon-flash"></i> Wallet <small>AngularJS</small></h3>
+
+                    <p class="lead">
+                        Just a simple application to add some fake credit cards.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-4">
+                    <h4 class="text-center">Active cards</h4>
+
+                    <hr>
+
+                    <div class="panel panel-default text-center" ng-repeat="card in cards | filter:{active: true}">
+                        <div class="panel-body">
+                            <p class="lead">{{ card.number }}</p>
+                            <p class="text-{{ card.active ? 'success' : 'warning' }}">{{ card.active ? 'Active' : 'Disabled' }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-4">
+                    <h4 class="text-center">Disabled cards</h4>
+
+                    <hr>
+
+                    <div class="panel panel-default text-center" ng-repeat="card in cards | filter:{active: false}">
+                        <div class="panel-body">
+                            <p class="lead">{{ card.number }}</p>
+                            <p class="text-{{ card.active ? 'success' : 'warning' }}">{{ card.active ? 'Active' : 'Disabled' }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
