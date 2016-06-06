@@ -11,4 +11,25 @@ app.controller('WalletCtrl', function($scope) {
             active: false
         }
     ];
+
+    $scope.addCard = function() {
+        $scope.cards.push({
+            number: $scope.number,
+            active: true
+        });
+
+        $scope.number = '';
+    };
+
+    $scope.changeStatus = function(number) {
+        var card = $scope.find(number);
+
+        card.active = !card.active;
+    };
+
+    $scope.find = function(number) {
+        return $scope.cards.filter(function(card) {
+            return card.number == number;
+        })[0];
+    };
 });
